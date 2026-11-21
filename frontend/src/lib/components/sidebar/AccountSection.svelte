@@ -49,6 +49,10 @@
 
   let showMenu = $state(false)
 
+  // Account color (same source and fallback as the unified inbox list)
+  // @ts-ignore - color field from backend
+  const accountColor = $derived(acc.color || '#6B7280')
+
   // Toggle expand/collapse via callback
   function toggleExpanded() {
     onToggleExpanded?.()
@@ -86,7 +90,13 @@
 
 <svelte:window onclick={handleClickOutside} />
 
-<div class="mb-2">
+<div class="mb-2 relative">
+  <!-- Account color stripe: spans the header and, when expanded, its folders.
+       Drawn as an overlay so row hover/selection backgrounds don't hide it. -->
+  <span
+    class="pointer-events-none absolute left-0 inset-y-0 w-[3px] z-10"
+    style="background-color: {accountColor}"
+  ></span>
   <!-- Account Header -->
   <div class="relative group">
     <button
@@ -99,7 +109,7 @@
         icon={isExpanded ? 'mdi:chevron-down' : 'mdi:chevron-right'}
         class="w-4 h-4 text-muted-foreground"
       />
-      <Icon icon="mdi:email-outline" class="w-4 h-4" />
+      <Icon icon="mdi:email-outline" class="w-4 h-4" style="color: {accountColor}" />
       <span class="truncate flex-1 text-left">{acc.name}</span>
 
       {#if syncing}
@@ -166,7 +176,7 @@
 
   <!-- Folder List -->
   {#if isExpanded}
-    <div class="ml-4">
+    <div class="ml-4 account-folders" style="--account-color: {accountColor}">
       {#if loading}
         <div class="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground">
           <Icon icon="mdi:loading" class="w-4 h-4 animate-spin" />

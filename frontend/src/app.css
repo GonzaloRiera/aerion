@@ -297,3 +297,18 @@ mark {
   text-decoration-skip-ink: none;
   text-underline-offset: 2px;
 }
+
+/* Unified inbox: tint each conversation row with its account color. Painted
+   as a background-image layer so the row's own background-color (selected /
+   hover states) still shows through underneath the tint. */
+.account-tinted {
+  background-image: linear-gradient(
+    color-mix(in srgb, var(--account-color) 9%, transparent),
+    color-mix(in srgb, var(--account-color) 9%, transparent)
+  );
+}
+
+/* Sidebar: folders inherit their account's color (icon and label). */
+.account-folders [data-sidebar-item="folder"] {
+  color: var(--account-color);
+}

@@ -473,6 +473,8 @@
     onwheel={handleWheel}
     role="button"
     tabindex="0"
+    style={showAccountIndicator && accountColor ? `--account-color: ${accountColor}` : undefined}
+    class:account-tinted={showAccountIndicator && !!accountColor}
   >
     {#if getAccentBarUnread() && hasUnread && getAccentUnreadStyle() !== 'bar'}
       <!-- Unread accent, dot variants: absolute so it never shifts row content
