@@ -14,7 +14,7 @@ export type MessageListDensity = 'micro' | 'compact' | 'standard' | 'large'
 export type MessageListSortOrder = 'newest' | 'oldest'
 export type ThemeMode =
   | 'system'
-  | 'light' | 'light-blue' | 'light-orange' | 'light-balanced' | 'adwaita-light' | 'breeze-light'
+  | 'light' | 'light-blue' | 'light-orange' | 'light-balanced' | 'light-dark-sidebar' | 'adwaita-light' | 'breeze-light'
   | 'dark' | 'dark-gray' | 'dark-balanced' | 'adwaita-dark' | 'breeze-dark'
   | 'catppuccin-latte' | 'catppuccin-frappe' | 'catppuccin-macchiato' | 'catppuccin-mocha'
   | 'dracula' | 'github-light' | 'github-dark' | 'github-soft-dark' | 'tokyo-night'

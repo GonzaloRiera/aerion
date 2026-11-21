@@ -12,6 +12,7 @@
 
 @import './themes/_defaults.css';
 @import './themes/built-in.css';
+@import './themes/dark-sidebar.css';
 @import './themes/adwaita.css';
 @import './themes/breeze.css';
 @import './themes/catppuccin.css';

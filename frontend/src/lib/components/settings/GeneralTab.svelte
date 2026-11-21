@@ -90,6 +90,7 @@
     { value: 'light-blue', label: $_('settingsGeneral.themeLightBlue') },
     { value: 'light-orange', label: $_('settingsGeneral.themeLightOrange') },
     { value: 'light-balanced', label: $_('settingsGeneral.themeLightBalanced') },
+    { value: 'light-dark-sidebar', label: $_('settingsGeneral.themeLightDarkSidebar') },
     { value: 'adwaita-light', label: 'Adwaita (Light)' },
     { value: 'breeze-light', label: 'Breeze (Light)' },
     { value: 'catppuccin-latte', label: 'Catppuccin Latte' },
